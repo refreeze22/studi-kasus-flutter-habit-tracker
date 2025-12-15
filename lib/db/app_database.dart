@@ -38,7 +38,7 @@ class AppDatabase {
   Future<Habit> insertHabit(Habit habit) async {
     final db = await instance.database;
     final id = await db.insert('habits', habit.toMap());
-    return habit..id = id;
+    return habit.copyWith(id: id);
   }
 
   Future<List<Habit>> getAllHabits() async {

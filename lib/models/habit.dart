@@ -15,6 +15,24 @@ class Habit {
     required this.createdAt,
   });
 
+  Habit copyWith({
+    int? id,
+    String? title,
+    String? description,
+    String? scheduleTime,
+    bool? isCompleted,
+    DateTime? createdAt,
+  }) {
+    return Habit(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      description: description ?? this.description,
+      scheduleTime: scheduleTime ?? this.scheduleTime,
+      isCompleted: isCompleted ?? this.isCompleted,
+      createdAt: createdAt ?? this.createdAt,
+    );
+  }
+
   Map<String, dynamic> toMap() {
     return {
       'id': id,
